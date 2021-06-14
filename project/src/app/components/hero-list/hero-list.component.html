@@ -1,0 +1,63 @@
+<!-- 
+<div class="row mt-5 pt-5 animated fadeInLeft" data-wow-delay="0.5s">
+    <table class="table table-hover">
+      <thead class="bg-default">
+        <tr class="text-white">
+          <th>#</th>
+          <th>姓 名</th>
+          <th>顶级英雄</th>
+          <th>删 除</th>
+          <th>查 看</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let hero of heroes" >
+          <th scope="row">{{hero.no}}</th>
+          <td>{{hero.name}}</td>
+          <td>{{hero.top?'是':'否'}}</td>
+          <td>
+            <button type="button" class="btn btn-sm btn-danger my-0 waves-light" (click)="delete(hero.id)">
+              <i class="fa fa-trash"></i>
+            </button>
+          </td>
+          <td>
+              <a class="btn btn-sm btn-info my-0 waves-light" routerLink="/hero-detail/{{hero.id}}">
+                <i class="fa fa-edit"></i>
+              </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div> -->
+
+<div class=" z-depth-2">
+  <mat-table class="" [dataSource]="dataSource">
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef class="bg"> 编号 </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef class="bg"> 姓名 </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+    </ng-container>back
+    <ng-container matColumnDef="top">
+      <mat-header-cell *matHeaderCellDef class="bg"> 顶级英雄 </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.top?'是':'否'}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="operation">
+      <mat-header-cell *matHeaderCellDef class="bg "> 操作 </mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <a class="btn btn-sm btn-info my-0 mr-3 hoverable" routerLink="/hero-detail/{{row.id}}">
+          <i class="fa fa-edit"> 编辑</i>
+        </a>
+        <button type="button" class="btn btn-sm btn-danger hoverable" (click)="delete(row.id)">
+          <i class="fa fa-trash"> 删除</i>
+        </button>
+      </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row class="hoverable" *matRowDef="let row; columns: displayedColumns;">
+    </mat-row>
+  </mat-table>
+</div>
+<mat-paginator [length]=10 [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>

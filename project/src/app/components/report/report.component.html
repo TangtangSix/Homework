@@ -1,0 +1,150 @@
+<div class="bg">
+    <div class="text-center">
+        <h1><strong>英雄之路作业报告</strong></h1>
+    </div>
+    <mat-accordion>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    <h4>一、内容</h4>
+                </mat-panel-title>
+                <mat-panel-description>
+                    Content
+                </mat-panel-description>
+
+            </mat-expansion-panel-header>
+            <h4>
+                <pre>
+
+        1、利用angular框架搭建英雄之路项目。
+        2、采用angular material组件库来对整个项目进行布局和设计。
+        3、结合MDbootstrap和fortawesome两种CSS框架对项目进行美化。
+    </pre>
+            </h4>
+        </mat-expansion-panel>
+    </mat-accordion>
+    <div>
+        <mat-accordion>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <h4>二、过程</h4>
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        Process
+                    </mat-panel-description>
+
+                </mat-expansion-panel-header>
+                <h4>
+                    <pre>
+        1.开发工具
+            VS Code、angular、Nodejs。
+
+        2.开发环境
+            @angular-devkit/architect       0.1102.12
+            @angular-devkit/build-angular   0.1102.12
+            @angular-devkit/core            11.2.12
+            @angular-devkit/schematics      11.2.12
+            @angular/cdk                    11.2.12
+            @angular/cli                    11.2.12
+            @angular/material               11.2.12
+            @schematics/angular             11.2.12
+            @schematics/update              0.1102.12
+            rxjs                            7.0.0
+            typescript                      4.1.5
+
+        3、开发过程
+
+            （1）先跟着官网<a href="https://angular.cn/tutorial"><ins>https://angular.cn/tutorial</ins></a>试着模仿,然后熟悉
+                angular基本框架结构,再了解angular相关工具和库的使用方法。
+
+            （2）在官网样例和老师给的样例的基础上按照自己的想法进行修改和结合。
+
+            （3）期间遇到问题通过问同学、老师以及查百度、CSDN等来尝试解决。
+
+                (4) 主要使用angular material中的组件来对完成项目的基本框架
+            </pre>
+                </h4>
+            </mat-expansion-panel>
+        </mat-accordion>
+
+    </div>
+    <div>
+
+        <mat-accordion>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <h4>三、问题</h4>
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        Problem
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <h5>
+                    <pre>
+
+1、已解决问题：
+    (1）MDB样式无法正常使用。
+        解决方法：<a href="https://mdbootstrap.com/docs/b5/angular/getting-started/installation/">
+        <ins>https://mdbootstrap.com/docs/b5/angular/getting-started/installation/</ins></a>
+    
+    (2) Material Icon无法正常显示图标。
+        解决方法：在项目的index.html文件中的head标签中加入
+        <ins>&lt;link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"&gt;</ins>
+    
+    (3) 再使用Material组件库出现
+        <img src="assets/1.png">
+        错误提示,一般都是app.module.ts中缺少对对应模块的import,此类错误只需要在<a href="https://material.angular.cn/components/paginator/overview">
+        <ins>https://material.angular.cn/components/paginator/overview</ins></a>
+        中找到对应模块,把API中import语句复制到app.module.ts中,并在import中导入即可。
+        类似错误都可尝试此方法解决。
+
+    (4) 在hero-list组件中进行删除操作后mat-table中没有同步操作
+        解决方法: 在删除函数中再执行一次对dataSource和paginator的重新赋值。
+    
+2、未解决问题
+        (1)在使用mat-table中，如果在每一行中放入按钮同时对mat-row标签添加routerLink事件后，
+        当点击按钮后同时触发按钮对应事件和routerLink绑定事件。
+            现在采取暂时放弃routerLink事件，额外添加一个按钮事件来代替routerLink对应事件。
+        
+        (2) 当mat-table中的数据来源于ajax时,mat-sort就失去作用。
+    
+        (3) 当使用路由标签router-outlet的时候,input和output无法在父组件和子组件直接进行
+        相关变量操作。
+
+        (4) 无法在标签mat-error使用自定义函数来决定是否显示
+        
+                </pre>
+                </h5>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+    <div>
+        <mat-accordion>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <h4>四、总结</h4>
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        Summarize
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <h4><pre>
+    通过此次angular项目实践，不仅使我对angular框架有了更深一步的了解，同时还增强了自我学习能力。
+相比较于传统的通过html+css+js的模式，通过使用框架可以大大节省我们项目开发的时间以及开发难度。
+    当然，前提是我们必须能够熟练的掌握并且使用对应框架的各种工具。虽然前期学习angular的时候很痛苦
+，但是当我能够开始驾驭它的时候，才能真正体验它的便捷和强大。
+                </pre>
+                       
+                </h4>
+            </mat-expansion-panel>
+        </mat-accordion>
+
+    </div>
+    <div>
+
+
+    </div>
+</div>

@@ -1,0 +1,85 @@
+<!-- 
+<mdb-navbar  SideClass="navbar navbar-expand-lg navbar-dark bg-primary" [containerInside]="true">
+  <logo>
+    <a class="logo navbar-brand" href="#">
+      <i class="fas fa-user"></i>
+      <strong>{{title}}</strong>
+    </a>  
+  </logo>
+  <links>
+    <ul class="navbar-nav mr-2">
+      <li class="nav-item " mdbRippleRadius>
+        <a class="nav-link" routerLink="/hero-list">
+          <i class="fas fa-list "> 所有英雄</i>
+        </a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" routerLink="/hero-top">
+          <i class="fas fa-thumbs-up"> 顶级英雄</i>
+          </a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" routerLink="/hero-add">
+          <i class="fas fa-plus "> 添加</i>
+          
+        </a>
+      </li>
+      <li class="nav-item"> 
+        <a class="nav-link" >
+          <i class="fas fa-search "> 查找</i>
+          <app-hero-search></app-hero-search>
+        </a>
+      </li>
+    </ul>
+    <ul class="navbar-nav nav-flex-icons">
+    <li class="nav-item waves-light" mdbRippleRadius>
+      <a class="nav-link" href="https://github.com/TangtangSix/homework">
+        <i class="fab fa-github">
+        </i>
+      </a>
+    </li>
+    </ul>
+  </links>
+</mdb-navbar> -->
+<mat-toolbar color="primary" class="bg">
+  <a class="ml-5" mat-button routerLink="/hero-list">
+    <i class="fas fa-home"> {{title}}</i>
+  </a>
+  <a class="mr-3" mat-button routerLink="/hero-list">
+    <i class="fas fa-list "> 所有英雄</i>
+  </a>
+  <a class="mr-3" mat-button routerLink="/hero-top">
+    <i class="fas fa-thumbs-up"> 顶级英雄</i>
+  </a>
+  <a class="mr-3" mat-button routerLink="/hero-add">
+    <mat-icon >add_box</mat-icon> 添加英雄
+  </a>
+  <a class="mr-3" mat-button routerLink="/report">
+    <mat-icon>content_paste</mat-icon> 报告
+  </a>
+  <a class="mr-3" mat-button>
+    <i class="fas fa-search "> 查找</i>
+      <app-hero-search></app-hero-search>
+  </a>
+
+  <span class="spacer"></span>
+  <div class="example-icon row">
+    <div class="col-md-8">
+
+    </div>
+    <div class="col-md-4">
+      <a class="example-icon" mat-button  href="https://github.com/TangtangSix/homework">
+        <i class="fab fa-github">
+        </i>
+      </a>
+    </div>
+  </div>
+  
+  
+</mat-toolbar>
+
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+
+ 

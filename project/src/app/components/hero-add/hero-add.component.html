@@ -1,0 +1,116 @@
+<!-- 
+
+<div [config]="{ show: true }" mdbModal #addHeroModal="mdb-modal" class="modal fade" (onHidden)="goBack()" tabindex="-1" role="dialog">
+    <div class="modal-dialog cascading-modal" role="document">    
+      <div class="modal-content">
+        <div class="modal-header bg-default darken-3 white-text">
+          <h4 class="title">
+            <i class="fa fa-user-plus"></i> 请填写英雄信息</h4>
+          <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close" (click)="goBack()">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body mb-0">
+          <form role="form">
+            <div class="md-form form-sm">
+              <i class="fa fa-user-circle prefix text-deault"></i>
+              <input mdbActive type="text" id="formNo" class="form-control text-center" #no required>
+              <label class="text-default" for="formNo">编号</label>
+            </div>
+  
+            <div class="md-form form-sm">
+              <i class="fas fa-address-card prefix text-default"></i>
+              <input mdbActive type="text" id="formName" class="form-control text-center" #name required>
+              <label class="text-default" for="formName">姓名</label>
+            </div>
+            <div class="md-form form-sm">
+              <i class="fas fa-thumbs-up prefix text-default"></i>
+              <label for="checkbox1">顶级英雄？</label>
+              <input type="checkbox" id="checkbox1" #isTop>
+            </div>
+            <hr>
+            <div class="text-center mt-1-half">
+              <button type="submit" class="btn btn-sm btn-info my-0 z-depth-2" mdbRippleRadius (click)="add(no.value,name.value,isTop.checked);addHeroModal.hide();no.value='';name.value='';isTop.checked=false">
+                <i class="fas fa-plus ml-1"> 添加</i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div> -->
+<!--Modal: Add Hero form-->
+<!-- <mat-card class="mycard z-depth-3">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+  </mat-card-header>
+  <mat-card-title style="text-align: center;" >英雄信息</mat-card-title>
+  <form [formGroup]="heroForm" (ngSubmit)="onFormSubmit()">
+    <mat-form-field class="full-width">
+        <mat-label>英雄编号</mat-label>
+        <input matInput readonly  value={{hero.id}}>
+    </mat-form-field>
+    <mat-form-field class="full-width hoverable"  appearance="fill">
+      <mat-label>英雄姓名</mat-label>
+      <input matInput placeholder="英雄姓名(>1)" formControlName="name" required>
+      <mat-icon matPrefix>person</mat-icon>
+      <mat-error>
+        <span *ngIf="!heroForm.get('name').valid && heroForm.get('name').touched">英雄请留名</span>
+      </mat-error>
+    </mat-form-field>
+    <div class="full-width">
+      <mat-checkbox formControlName="top" color="warn">顶级英雄?</mat-checkbox>
+    </div>
+    <div style="text-align: center;">
+      <span class="flat-button mr-4">
+        <button type="submit" [disabled]="!heroForm.valid" mat-raised-button color="primary" matTooltip="保存英雄">
+          <mat-icon>save</mat-icon>保 存
+        </button>
+      </span>
+      <span class="flat-button">
+        <a mat-raised-button color="warn" matTooltip="放弃" (click)="goBack()">
+          <mat-icon>cancel</mat-icon>取 消
+        </a>
+      </span>
+    </div>
+  </form>
+</mat-card> -->
+<mat-card class="my-card z-depth-1 mb-2">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title class="my-card-title">英雄信息</mat-card-title>
+    <mat-card-subtitle>{{hero.name}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content class="c1">
+    <mat-accordion>
+
+      <form [formGroup]='heroForm'>
+        <mat-form-field class="c2">
+          <mat-label>英雄编号</mat-label>
+          <input matInput formControlName="id" readonly>
+        </mat-form-field>
+        <mat-form-field class="c2">
+          <mat-label>英雄姓名</mat-label>
+          <input matInput formControlName="name">
+          <mat-error>
+            <span *ngIf="!heroForm.get('name').valid && heroForm.get('name').touched">请输入姓名</span>
+          </mat-error>
+        </mat-form-field>
+        <div class="c2">
+          <mat-checkbox formControlName="top" color="warn"></mat-checkbox>
+          <mat-label>顶级英雄</mat-label>
+        </div>
+      </form>
+
+    </mat-accordion>
+
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button (click)="onFormSubmit()" [disabled]="!heroForm.valid" mat-raised-button color="primary" matTooltip="保存英雄">
+      <mat-icon>save</mat-icon>保 存
+    </button>
+    <button mat-button (click)="goBack()">
+      <mat-icon>cancel</mat-icon> 返回
+    </button>
+  </mat-card-actions>
+</mat-card>

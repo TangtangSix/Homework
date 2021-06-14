@@ -1,0 +1,50 @@
+.form {
+    min-width: 150px;
+    max-width: 200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .full-width {
+    margin-left: 20%;
+    width: 60%;
+    height: 30%;
+  }
+  
+  .full-width:nth-last-child(0) {
+    margin-bottom: 10px;
+  }
+  .mycard {
+    margin-left: 25%;
+    max-width: 50%;
+    margin-right: 25%;
+    min-width: 200px;
+    margin-top: 25px;
+    background-color:#eeffff;
+  }
+  
+.c2{
+  //margin-right: 40%;
+  width: 100%;
+  margin-top: 5%;
+}
+.bg {
+  background-color: #eeffff
+}  
+
+.my-card {
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 2%;
+  border:5px solid #eeffff
+}
+
+.c1{
+  margin-left: 15%;
+  width: 70%;
+}
+.example-header-image {
+  background-image: url('../../../assets/2.jpg');
+  background-size: cover;
+}
